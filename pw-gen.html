@@ -18,12 +18,12 @@
 
   You should have received a copy of the GNU Lesser General Public License
   along with this library; if not, write to the Free Software Foundation,
-  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 -->
 <head>
 <title>PasswordMaker. One Password To Rule Them All.&trade;</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-<style type="text/css"> 
+<style type="text/css">
 body {
   background: #EFEFEF;
   margin: 0;
@@ -32,13 +32,13 @@ body {
 }
 
 #canvasWrapper {
-  margin: 0 auto 0 auto;	
+  margin: 0 auto 0 auto;
   padding: 0 25px 0 25px;
 }
 
-#canvas {			
+#canvas {
   background: #FFF;
-  margin: 0 auto 0 auto;	
+  margin: 0 auto 0 auto;
   width: 700px;
 }
 
@@ -48,7 +48,7 @@ body {
   text-align: center;
 }
 
-#content {			
+#content {
   background: #FFF;
   float: left;
   width: 450px;
@@ -62,7 +62,7 @@ body {
   padding: 0;
   text-align: center;
   font-weight: bold;
-}           
+}
 body, .standard {
   color:#333;
   font: normal 11px/22px tahoma, 'Tahoma', trebuchet, 'Trebuchet MS', arial, 'Arial', sans;
@@ -72,27 +72,27 @@ body, .standard {
   font: normal 11px/22px tahoma, 'Tahoma', trebuchet, 'Trebuchet MS', arial, 'Arial', sans;
   color: #666;
   overflow:hidden;
-  height:25px; 
-}  
-input.button { 
-  background: #F3F3F3; 
+  height:25px;
+}
+input.button {
+  background: #F3F3F3;
   border: 1px solid #999999;
-  color: #525252; 
-  font: bold 10px/10px Verdana, Helvetica, sans-serif; 
+  color: #525252;
+  font: bold 10px/10px Verdana, Helvetica, sans-serif;
   height: 25px;
   padding: .3em;
-  -moz-border-radius: 0.5em;			
+  -moz-border-radius: 0.5em;
 }
 
-input.standard { 
-  background: #FFFFFF; 
-  border: 1px solid #999999; 
+input.standard {
+  background: #FFFFFF;
+  border: 1px solid #999999;
   color:#333;
   font: normal 11px/22px tahoma, 'Tahoma', trebuchet, 'Trebuchet MS', arial, 'Arial', sans;
-  text-align: left; 
+  text-align: left;
   width: 200px;
   padding: .3em;
- -moz-border-radius: 0.5em;			
+ -moz-border-radius: 0.5em;
 }
 table {
   background: #EFEFEF;
@@ -108,16 +108,16 @@ td, tr {
   vertical-align: top;
 }
 
-td textarea { 
-  background: #FFFFFF; 
-  border: 1px solid #999999; 
+td textarea {
+  background: #FFFFFF;
+  border: 1px solid #999999;
   color:#333;
   font: normal 11px/22px tahoma, 'Tahoma', trebuchet, 'Trebuchet MS', arial, 'Arial', sans;
-  text-align: left; 
+  text-align: left;
   height: 100px;
   width: 200px;
   padding: .3em;
- -moz-border-radius: 0.5em;		
+ -moz-border-radius: 0.5em;
 }
 .title {
   font: bold 14px/22px tahoma, 'Tahoma', trebuchet, 'Trebuchet MS', arial, 'Arial', sans;
@@ -139,7 +139,7 @@ option.activateEdit {
 
 /* rijndael.js      Rijndael Reference Implementation
    Copyright (c) 2001 Fritz Schneider
-   See http://www-cse.ucsd.edu/~fritz/rijndael.html 
+   See http://www-cse.ucsd.edu/~fritz/rijndael.html
 */
 
 // Rijndael parameters --  Valid values are 128, 192, or 256
@@ -156,67 +156,67 @@ var blockSizeInBits = 128;
 
 
 // The number of rounds for the cipher, indexed by [Nk][Nb]
-var roundsArray = [ ,,,,[,,,,10,, 12,, 14],, 
-                        [,,,,12,, 12,, 14],, 
+var roundsArray = [ ,,,,[,,,,10,, 12,, 14],,
+                        [,,,,12,, 12,, 14],,
                         [,,,,14,, 14,, 14] ];
 
 // The number of bytes to shift by in shiftRow, indexed by [Nb][row]
 var shiftOffsets = [ ,,,,[,1, 2, 3],,[,1, 2, 3],,[,1, 3, 4] ];
 
 // The round constants used in subkey expansion
-var Rcon = [ 
-0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 
-0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 
-0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 
-0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 
+var Rcon = [
+0x01, 0x02, 0x04, 0x08, 0x10, 0x20,
+0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8,
+0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc,
+0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4,
 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91 ];
 
 // Precomputed lookup table for the SBox
 var SBox = [
- 99, 124, 119, 123, 242, 107, 111, 197,  48,   1, 103,  43, 254, 215, 171, 
-118, 202, 130, 201, 125, 250,  89,  71, 240, 173, 212, 162, 175, 156, 164, 
-114, 192, 183, 253, 147,  38,  54,  63, 247, 204,  52, 165, 229, 241, 113, 
-216,  49,  21,   4, 199,  35, 195,  24, 150,   5, 154,   7,  18, 128, 226, 
-235,  39, 178, 117,   9, 131,  44,  26,  27, 110,  90, 160,  82,  59, 214, 
-179,  41, 227,  47, 132,  83, 209,   0, 237,  32, 252, 177,  91, 106, 203, 
-190,  57,  74,  76,  88, 207, 208, 239, 170, 251,  67,  77,  51, 133,  69, 
-249,   2, 127,  80,  60, 159, 168,  81, 163,  64, 143, 146, 157,  56, 245, 
-188, 182, 218,  33,  16, 255, 243, 210, 205,  12,  19, 236,  95, 151,  68,  
-23,  196, 167, 126,  61, 100,  93,  25, 115,  96, 129,  79, 220,  34,  42, 
+ 99, 124, 119, 123, 242, 107, 111, 197,  48,   1, 103,  43, 254, 215, 171,
+118, 202, 130, 201, 125, 250,  89,  71, 240, 173, 212, 162, 175, 156, 164,
+114, 192, 183, 253, 147,  38,  54,  63, 247, 204,  52, 165, 229, 241, 113,
+216,  49,  21,   4, 199,  35, 195,  24, 150,   5, 154,   7,  18, 128, 226,
+235,  39, 178, 117,   9, 131,  44,  26,  27, 110,  90, 160,  82,  59, 214,
+179,  41, 227,  47, 132,  83, 209,   0, 237,  32, 252, 177,  91, 106, 203,
+190,  57,  74,  76,  88, 207, 208, 239, 170, 251,  67,  77,  51, 133,  69,
+249,   2, 127,  80,  60, 159, 168,  81, 163,  64, 143, 146, 157,  56, 245,
+188, 182, 218,  33,  16, 255, 243, 210, 205,  12,  19, 236,  95, 151,  68,
+23,  196, 167, 126,  61, 100,  93,  25, 115,  96, 129,  79, 220,  34,  42,
 144, 136,  70, 238, 184,  20, 222,  94,  11, 219, 224,  50,  58,  10,  73,
-  6,  36,  92, 194, 211, 172,  98, 145, 149, 228, 121, 231, 200,  55, 109, 
-141, 213,  78, 169, 108,  86, 244, 234, 101, 122, 174,   8, 186, 120,  37,  
- 46,  28, 166, 180, 198, 232, 221, 116,  31,  75, 189, 139, 138, 112,  62, 
+  6,  36,  92, 194, 211, 172,  98, 145, 149, 228, 121, 231, 200,  55, 109,
+141, 213,  78, 169, 108,  86, 244, 234, 101, 122, 174,   8, 186, 120,  37,
+ 46,  28, 166, 180, 198, 232, 221, 116,  31,  75, 189, 139, 138, 112,  62,
 181, 102,  72,   3, 246,  14,  97,  53,  87, 185, 134, 193,  29, 158, 225,
 248, 152,  17, 105, 217, 142, 148, 155,  30, 135, 233, 206,  85,  40, 223,
-140, 161, 137,  13, 191, 230,  66, 104,  65, 153,  45,  15, 176,  84, 187,  
+140, 161, 137,  13, 191, 230,  66, 104,  65, 153,  45,  15, 176,  84, 187,
  22 ];
 
 // Precomputed lookup table for the inverse SBox
 var SBoxInverse = [
- 82,   9, 106, 213,  48,  54, 165,  56, 191,  64, 163, 158, 129, 243, 215, 
-251, 124, 227,  57, 130, 155,  47, 255, 135,  52, 142,  67,  68, 196, 222, 
-233, 203,  84, 123, 148,  50, 166, 194,  35,  61, 238,  76, 149,  11,  66, 
-250, 195,  78,   8,  46, 161, 102,  40, 217,  36, 178, 118,  91, 162,  73, 
-109, 139, 209,  37, 114, 248, 246, 100, 134, 104, 152,  22, 212, 164,  92, 
-204,  93, 101, 182, 146, 108, 112,  72,  80, 253, 237, 185, 218,  94,  21,  
- 70,  87, 167, 141, 157, 132, 144, 216, 171,   0, 140, 188, 211,  10, 247, 
-228,  88,   5, 184, 179,  69,   6, 208,  44,  30, 143, 202,  63,  15,   2, 
-193, 175, 189,   3,   1,  19, 138, 107,  58, 145,  17,  65,  79, 103, 220, 
+ 82,   9, 106, 213,  48,  54, 165,  56, 191,  64, 163, 158, 129, 243, 215,
+251, 124, 227,  57, 130, 155,  47, 255, 135,  52, 142,  67,  68, 196, 222,
+233, 203,  84, 123, 148,  50, 166, 194,  35,  61, 238,  76, 149,  11,  66,
+250, 195,  78,   8,  46, 161, 102,  40, 217,  36, 178, 118,  91, 162,  73,
+109, 139, 209,  37, 114, 248, 246, 100, 134, 104, 152,  22, 212, 164,  92,
+204,  93, 101, 182, 146, 108, 112,  72,  80, 253, 237, 185, 218,  94,  21,
+ 70,  87, 167, 141, 157, 132, 144, 216, 171,   0, 140, 188, 211,  10, 247,
+228,  88,   5, 184, 179,  69,   6, 208,  44,  30, 143, 202,  63,  15,   2,
+193, 175, 189,   3,   1,  19, 138, 107,  58, 145,  17,  65,  79, 103, 220,
 234, 151, 242, 207, 206, 240, 180, 230, 115, 150, 172, 116,  34, 231, 173,
- 53, 133, 226, 249,  55, 232,  28, 117, 223, 110,  71, 241,  26, 113,  29, 
- 41, 197, 137, 111, 183,  98,  14, 170,  24, 190,  27, 252,  86,  62,  75, 
+ 53, 133, 226, 249,  55, 232,  28, 117, 223, 110,  71, 241,  26, 113,  29,
+ 41, 197, 137, 111, 183,  98,  14, 170,  24, 190,  27, 252,  86,  62,  75,
 198, 210, 121,  32, 154, 219, 192, 254, 120, 205,  90, 244,  31, 221, 168,
  51, 136,   7, 199,  49, 177,  18,  16,  89,  39, 128, 236,  95,  96,  81,
 127, 169,  25, 181,  74,  13,  45, 229, 122, 159, 147, 201, 156, 239, 160,
-224,  59,  77, 174,  42, 245, 176, 200, 235, 187,  60, 131,  83, 153,  97, 
+224,  59,  77, 174,  42, 245, 176, 200, 235, 187,  60, 131,  83, 153,  97,
  23,  43,   4, 126, 186, 119, 214,  38, 225, 105,  20,  99,  85,  33,  12,
 125 ];
 
 // This method circularly shifts the array left by the number of elements
-// given in its parameter. It returns the resulting array and is used for 
-// the ShiftRow step. Note that shift() and push() could be used for a more 
-// elegant solution, but they require IE5.5+, so I chose to do it manually. 
+// given in its parameter. It returns the resulting array and is used for
+// the ShiftRow step. Note that shift() and push() could be used for a more
+// elegant solution, but they require IE5.5+, so I chose to do it manually.
 
 function cyclicShiftLeft(theArray, positions) {
   var temp = theArray.slice(0, positions);
@@ -225,7 +225,7 @@ function cyclicShiftLeft(theArray, positions) {
 }
 
 // Cipher parameters ... do not change these
-var Nk = keySizeInBits / 32;                   
+var Nk = keySizeInBits / 32;
 var Nb = blockSizeInBits / 32;
 var Nr = roundsArray[Nk][Nb];
 
@@ -243,9 +243,9 @@ function xtime(poly) {
 
 function mult_GF256(x, y) {
   var bit, result = 0;
-  
+
   for (bit = 1; bit < 256; bit *= 2, y = xtime(y)) {
-    if (x & bit) 
+    if (x & bit)
       result ^= y;
   }
   return result;
@@ -253,7 +253,7 @@ function mult_GF256(x, y) {
 
 // Performs the substitution step of the cipher. State is the 2d array of
 // state information (see spec) and direction is string indicating whether
-// we are performing the forward substitution ("encrypt") or inverse 
+// we are performing the forward substitution ("encrypt") or inverse
 // substitution (anything else)
 
 function byteSub(state, direction) {
@@ -280,7 +280,7 @@ function shiftRow(state, direction) {
 
 // Performs the column mixing step of the cipher. Most of these steps can
 // be combined into table lookups on 32bit values (at least for encryption)
-// to greatly increase the speed. 
+// to greatly increase the speed.
 
 function mixColumn(state, direction) {
   var b = [];                            // Result of matrix multiplications
@@ -288,11 +288,11 @@ function mixColumn(state, direction) {
     for (var i = 0; i < 4; i++) {        // and for each row in the column...
       if (direction == "encrypt")
         b[i] = mult_GF256(state[i][j], 2) ^          // perform mixing
-               mult_GF256(state[(i+1)%4][j], 3) ^ 
-               state[(i+2)%4][j] ^ 
+               mult_GF256(state[(i+1)%4][j], 3) ^
+               state[(i+2)%4][j] ^
                state[(i+3)%4][j];
-      else 
-        b[i] = mult_GF256(state[i][j], 0xE) ^ 
+      else
+        b[i] = mult_GF256(state[i][j], 0xE) ^
                mult_GF256(state[(i+1)%4][j], 0xB) ^
                mult_GF256(state[(i+2)%4][j], 0xD) ^
                mult_GF256(state[(i+3)%4][j], 9);
@@ -315,7 +315,7 @@ function addRoundKey(state, roundKey) {
 
 // This function creates the expanded key from the input (128/192/256-bit)
 // key. The parameter key is an array of bytes holding the value of the key.
-// The returned value is an array whose elements are the 32-bit words that 
+// The returned value is an array whose elements are the 32-bit words that
 // make up the expanded key.
 
 function keyExpansion(key) {
@@ -323,19 +323,19 @@ function keyExpansion(key) {
   var temp;
 
   // in case the key size or parameters were changed...
-  Nk = keySizeInBits / 32;                   
+  Nk = keySizeInBits / 32;
   Nb = blockSizeInBits / 32;
   Nr = roundsArray[Nk][Nb];
 
   for (var j=0; j < Nk; j++)     // Fill in input key first
-    expandedKey[j] = 
+    expandedKey[j] =
       (key[4*j]) | (key[4*j+1]<<8) | (key[4*j+2]<<16) | (key[4*j+3]<<24);
 
   // Now walk down the rest of the array filling in expanded key bytes as
   // per Rijndael's spec
   for (j = Nk; j < Nb * (Nr + 1); j++) {    // For each word of expanded key
     temp = expandedKey[j - 1];
-    if (j % Nk == 0) 
+    if (j % Nk == 0)
       temp = ( (SBox[(temp>>8) & 0xFF]) |
                (SBox[(temp>>16) & 0xFF]<<8) |
                (SBox[(temp>>24) & 0xFF]<<16) |
@@ -350,7 +350,7 @@ function keyExpansion(key) {
   return expandedKey;
 }
 
-// Rijndael's round functions... 
+// Rijndael's round functions...
 
 function Round(state, roundKey) {
   byteSub(state, "encrypt");
@@ -375,7 +375,7 @@ function FinalRound(state, roundKey) {
 function InverseFinalRound(state, roundKey){
   addRoundKey(state, roundKey);
   shiftRow(state, "decrypt");
-  byteSub(state, "decrypt");  
+  byteSub(state, "decrypt");
 }
 
 // encrypt is the basic encryption function. It takes parameters
@@ -384,17 +384,17 @@ function InverseFinalRound(state, roundKey){
 // keyExpansion(). The ciphertext block is returned as an array of bytes.
 
 function encrypt(block, expandedKey) {
-  var i;  
+  var i;
   if (!block || block.length*8 != blockSizeInBits)
-     return; 
+     return;
   if (!expandedKey)
      return;
 
   block = packBytes(block);
   addRoundKey(block, expandedKey);
-  for (i=1; i<Nr; i++) 
+  for (i=1; i<Nr; i++)
     Round(block, expandedKey.slice(Nb*i, Nb*(i+1)));
-  FinalRound(block, expandedKey.slice(Nb*Nr)); 
+  FinalRound(block, expandedKey.slice(Nb*Nr));
   return unpackBytes(block);
 }
 
@@ -411,8 +411,8 @@ function decrypt(block, expandedKey) {
      return;
 
   block = packBytes(block);
-  InverseFinalRound(block, expandedKey.slice(Nb*Nr)); 
-  for (i = Nr - 1; i>0; i--) 
+  InverseFinalRound(block, expandedKey.slice(Nb*Nr));
+  for (i = Nr - 1; i>0; i--)
     InverseRound(block, expandedKey.slice(Nb*i, Nb*(i+1)));
   addRoundKey(block, expandedKey);
   return unpackBytes(block);
@@ -423,21 +423,21 @@ function decrypt(block, expandedKey) {
 // The resulting string is returned. Note that this function SKIPS zero bytes
 // under the assumption that they are padding added in formatPlaintext().
 // Obviously, do not invoke this method on raw data that can contain zero
-// bytes. It is really only appropriate for printable ASCII/Latin-1 
+// bytes. It is really only appropriate for printable ASCII/Latin-1
 // values. Roll your own function for more robust functionality :)
 
 function byteArrayToString(byteArray) {
   var result = "";
   for(var i=0; i<byteArray.length; i++)
-    if (byteArray[i] != 0) 
+    if (byteArray[i] != 0)
       result += String.fromCharCode(byteArray[i]);
   return result;
 }
 
 // This function takes an array of bytes (byteArray) and converts them
-// to a hexadecimal string. Array element 0 is found at the beginning of 
+// to a hexadecimal string. Array element 0 is found at the beginning of
 // the resulting string, high nibble first. Consecutive elements follow
-// similarly, for example [16, 255] --> "10ff". The function returns a 
+// similarly, for example [16, 255] --> "10ff". The function returns a
 // string.
 
 function byteArrayToHex(byteArray) {
@@ -450,10 +450,10 @@ function byteArrayToHex(byteArray) {
   return result;
 }
 
-// This function converts a string containing hexadecimal digits to an 
+// This function converts a string containing hexadecimal digits to an
 // array of bytes. The resulting byte array is filled in the order the
 // values occur in the string, for example "10FF" --> [16, 255]. This
-// function returns an array. 
+// function returns an array.
 
 function hexToByteArray(hexString) {
   var byteArray = [];
@@ -461,7 +461,7 @@ function hexToByteArray(hexString) {
     return;
   if (hexString.indexOf("0x") == 0 || hexString.indexOf("0X") == 0)
     hexString = hexString.substring(2);
-  for (var i = 0; i<hexString.length; i += 2) 
+  for (var i = 0; i<hexString.length; i += 2)
     byteArray[Math.floor(i/2)] = parseInt(hexString.slice(i, i+2), 16);
   return byteArray;
 }
@@ -476,7 +476,7 @@ function packBytes(octets) {
   if (!octets || octets.length % 4)
     return;
 
-  state[0] = new Array();  state[1] = new Array(); 
+  state[0] = new Array();  state[1] = new Array();
   state[2] = new Array();  state[3] = new Array();
   for (var j=0; j<octets.length; j+= 4) {
      state[0][j/4] = octets[j];
@@ -484,12 +484,12 @@ function packBytes(octets) {
      state[2][j/4] = octets[j+2];
      state[3][j/4] = octets[j+3];
   }
-  return state;  
+  return state;
 }
 
 // This function unpacks an array of bytes from the four row format preferred
 // by Rijndael into a single 1d array of bytes. It assumes the input "packed"
-// is a packed array. Bytes are filled in according to the Rijndael spec. 
+// is a packed array. Bytes are filled in according to the Rijndael spec.
 // This function returns a 1d array of bytes.
 
 function unpackBytes(packed) {
@@ -504,11 +504,11 @@ function unpackBytes(packed) {
 }
 
 // This function takes a prospective plaintext (string or array of bytes)
-// and pads it with zero bytes if its length is not a multiple of the block 
+// and pads it with zero bytes if its length is not a multiple of the block
 // size. If plaintext is a string, it is converted to an array of bytes
-// in the process. The type checking can be made much nicer using the 
-// instanceof operator, but this operator is not available until IE5.0 so I 
-// chose to use the heuristic below. 
+// in the process. The type checking can be made much nicer using the
+// instanceof operator, but this operator is not available until IE5.0 so I
+// chose to use the heuristic below.
 
 function formatPlaintext(plaintext) {
   var bpb = blockSizeInBits / 8;               // bytes per block
@@ -520,11 +520,11 @@ function formatPlaintext(plaintext) {
     // Unicode issues here (ignoring high byte)
     for (i=0; i<plaintext.length; i++)
       plaintext[i] = plaintext[i].charCodeAt(0) & 0xFF;
-  } 
+  }
 
-  for (i = bpb - (plaintext.length % bpb); i > 0 && i < bpb; i--) 
+  for (i = bpb - (plaintext.length % bpb); i > 0 && i < bpb; i--)
     plaintext[plaintext.length] = 0;
-  
+
   return plaintext;
 }
 
@@ -541,17 +541,17 @@ function getRandomBytes(howMany) {
 }
 
 // rijndaelEncrypt(plaintext, key, mode)
-// Encrypts the plaintext using the given key and in the given mode. 
-// The parameter "plaintext" can either be a string or an array of bytes. 
-// The parameter "key" must be an array of key bytes. If you have a hex 
-// string representing the key, invoke hexToByteArray() on it to convert it 
+// Encrypts the plaintext using the given key and in the given mode.
+// The parameter "plaintext" can either be a string or an array of bytes.
+// The parameter "key" must be an array of key bytes. If you have a hex
+// string representing the key, invoke hexToByteArray() on it to convert it
 // to an array of bytes. The third parameter "mode" is a string indicating
 // the encryption mode to use, either "ECB" or "CBC". If the parameter is
 // omitted, ECB is assumed.
-// 
-// An array of bytes representing the cihpertext is returned. To convert 
-// this array to hex, invoke byteArrayToHex() on it. If you are using this 
-// "for real" it is a good idea to change the function getRandomBytes() to 
+//
+// An array of bytes representing the cihpertext is returned. To convert
+// this array to hex, invoke byteArrayToHex() on it. If you are using this
+// "for real" it is a good idea to change the function getRandomBytes() to
 // something that returns truly random bits.
 
 function rijndaelEncrypt(plaintext, key, mode) {
@@ -562,7 +562,7 @@ function rijndaelEncrypt(plaintext, key, mode) {
   if (!plaintext || !key)
     return;
   if (key.length*8 != keySizeInBits)
-    return; 
+    return;
   if (mode == "CBC")
     ct = getRandomBytes(bpb);             // get IV
   else {
@@ -570,15 +570,15 @@ function rijndaelEncrypt(plaintext, key, mode) {
     ct = new Array();
   }
 
-  // convert plaintext to byte array and pad with zeros if necessary. 
+  // convert plaintext to byte array and pad with zeros if necessary.
   plaintext = formatPlaintext(plaintext);
 
   expandedKey = keyExpansion(key);
-  
+
   for (var block=0; block<plaintext.length / bpb; block++) {
     aBlock = plaintext.slice(block*bpb, (block+1)*bpb);
     if (mode == "CBC")
-      for (var i=0; i<bpb; i++) 
+      for (var i=0; i<bpb; i++)
         aBlock[i] ^= ct[block*bpb + i];
 
     ct = ct.concat(encrypt(aBlock, expandedKey));
@@ -588,14 +588,14 @@ function rijndaelEncrypt(plaintext, key, mode) {
 }
 
 // rijndaelDecrypt(ciphertext, key, mode)
-// Decrypts the using the given key and mode. The parameter "ciphertext" 
-// must be an array of bytes. The parameter "key" must be an array of key 
-// bytes. If you have a hex string representing the ciphertext or key, 
+// Decrypts the using the given key and mode. The parameter "ciphertext"
+// must be an array of bytes. The parameter "key" must be an array of key
+// bytes. If you have a hex string representing the ciphertext or key,
 // invoke hexToByteArray() on it to convert it to an array of bytes. The
 // parameter "mode" is a string, either "CBC" or "ECB".
-// 
-// An array of bytes representing the plaintext is returned. To convert 
-// this array to a hex string, invoke byteArrayToHex() on it. To convert it 
+//
+// An array of bytes representing the plaintext is returned. To convert
+// this array to a hex string, invoke byteArrayToHex() on it. To convert it
 // to a string of characters, you can use byteArrayToString().
 
 function rijndaelDecrypt(ciphertext, key, mode) {
@@ -608,20 +608,20 @@ function rijndaelDecrypt(ciphertext, key, mode) {
   if (!ciphertext || !key || typeof ciphertext == "string")
     return;
   if (key.length*8 != keySizeInBits)
-    return; 
+    return;
   if (!mode)
     mode = "ECB";                         // assume ECB if mode omitted
 
   expandedKey = keyExpansion(key);
- 
-  // work backwards to accomodate CBC mode 
+
+  // work backwards to accomodate CBC mode
   for (block=(ciphertext.length / bpb)-1; block>0; block--) {
-    aBlock = 
+    aBlock =
      decrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
-    if (mode == "CBC") 
-      for (var i=0; i<bpb; i++) 
+    if (mode == "CBC")
+      for (var i=0; i<bpb; i++)
         pt[(block-1)*bpb + i] = aBlock[i] ^ ciphertext[(block-1)*bpb + i];
-    else 
+    else
       pt = aBlock.concat(pt);
   }
 
@@ -690,16 +690,16 @@ function loadProfile() {
 
   var a = unescape(getCookie(escape(selectedProfile)));
   var settingsArray = a.split("|");
-  
+
   preUrl.value = (settingsArray[0] == undefined || settingsArray[6] == undefined) ? "" : unescape(settingsArray[0]);
-  passwdLength.value = (settingsArray[1] == undefined || settingsArray[1] == undefined) ? "8" : settingsArray[1];
+  passwdLength.value = (settingsArray[1] == undefined || settingsArray[1] == undefined) ? "19" : settingsArray[1];
   protocolCB.checked = (settingsArray[2] == undefined || settingsArray[2] == undefined) ? false : settingsArray[2] == "true";
   domainCB.checked = (settingsArray[3] == undefined || settingsArray[3] == undefined) ? true : settingsArray[3] == "true";
   subdomainCB.checked = (settingsArray[4] == undefined || settingsArray[4] == undefined) ? false : settingsArray[4] == "true";
   pathCB.checked = (settingsArray[5] == undefined || settingsArray[5] == undefined) ? false : settingsArray[5] == "true";
   passwdUrl.value = (settingsArray[6] == undefined || settingsArray[6] == undefined) ? "" : unescape(settingsArray[6]);
   leetLevelLB.value = (settingsArray[7] == undefined || settingsArray[7] == undefined) ? "0" : settingsArray[7];
-  hashAlgorithmLB.value = (settingsArray[8] == undefined || settingsArray[8] == undefined) ? "md5" : settingsArray[8];  
+  hashAlgorithmLB.value = (settingsArray[8] == undefined || settingsArray[8] == undefined) ? "md5" : settingsArray[8];
   whereLeetLB.value = (settingsArray[9] == undefined || settingsArray[9] == undefined) ? "off" : settingsArray[9];
   usernameTB.value = (settingsArray[10] == undefined || settingsArray[10] == undefined) ? "" : unescape(settingsArray[10]);
   counter.value = (settingsArray[11] == undefined || settingsArray[11] == undefined) ? "" : unescape(settingsArray[11]);
@@ -757,7 +757,7 @@ function preGeneratePassword() {
       EditableSelect.setValue(document.getElementById("charset"), userCharsetValue);
       document.getElementById("charset").disabled = false;
    }
-   
+
    // Calls generatepassword() n times in order to support passwords
    // of arbitrary length regardless of character set length.
    var password = "";
@@ -771,25 +771,25 @@ function preGeneratePassword() {
        generatepassword(hashAlgorithm, passwdMaster.value,
          passwdUrl.value + usernameTB.value + counter.value, whereToUseL33t, l33tLevel,
          passwdLength.value, selectedChar, passwordPrefix.value, passwordSuffix.value) :
-       generatepassword(hashAlgorithm, passwdMaster.value + '\n' + count, 
+       generatepassword(hashAlgorithm, passwdMaster.value + '\n' + count,
          passwdUrl.value + usernameTB.value + counter.value, whereToUseL33t, l33tLevel,
          passwdLength.value, selectedChar, passwordPrefix.value, passwordSuffix.value);
      count++;
    }
-     
+
    if (passwordPrefix.value)
      password = passwordPrefix.value + password;
    if (passwordSuffix.value)
      password = password.substring(0, passwdLength.value-passwordSuffix.value.length) + passwordSuffix.value;
    passwdGenerated.value = password.substring(0, passwdLength.value);
 }
-  
+
 function generatepassword(hashAlgorithm, key, data, whereToUseL33t, l33tLevel, passwordLength, charset, prefix, suffix) {
 
   // for non-hmac algorithms, the key is master pw and url concatenated
   var usingHMAC = hashAlgorithm.indexOf("hmac") > -1;
   if (!usingHMAC)
-    key += data; 
+    key += data;
 
   // apply l33t before the algorithm?
   if (whereToUseL33t == "both" || whereToUseL33t == "before-hashing") {
@@ -869,7 +869,7 @@ function populateURL() {
         // Add a dot if this isn't the final subdomain
 	    if (i+1 < domainSegments.length-2)
 		  displayMe += ".";
-	  }			
+	  }
   }
 
   if (domainCB.checked) {
@@ -882,7 +882,7 @@ function populateURL() {
   if (pathCB.checked)
 	  displayMe += temp[3];
 
-  passwdUrl.value = displayMe;	  
+  passwdUrl.value = displayMe;
   preGeneratePassword();
 }
 
@@ -951,13 +951,13 @@ function exportPreferences() {
   subdomainCB.checked + "|" +
   pathCB.checked + "|" +
   escape(passwdUrl.value) + "|" +
-  leetLevelLB.value + "|" + 
+  leetLevelLB.value + "|" +
   hashAlgorithmLB.value + "|" +
   whereLeetLB.value + "|" +
   escape(usernameTB.value) + "|" +
   escape(counter.value) + "|" +
   escape(selectedChar) + "|" +
-  escape(passwordPrefix.value) + "|" + 
+  escape(passwordPrefix.value) + "|" +
   escape(passwordSuffix.value);
 
   // Double-escaping allows the pipe character to be part of the data itself
@@ -1001,7 +1001,7 @@ function loadGlobalPrefs() {
 
 	if (settingsArray[2] != undefined && settingsArray[3] != undefined) {
 		// Decrypt the encrypted master pw
-		passwdMaster.value = byteArrayToString(rijndaelDecrypt(hexToByteArray(unescape(settingsArray[3])), 
+		passwdMaster.value = byteArrayToString(rijndaelDecrypt(hexToByteArray(unescape(settingsArray[3])),
 		hexToByteArray(unescape(settingsArray[2])), "CBC"));
 	}
 }
@@ -1029,7 +1029,7 @@ var hex = ['0','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
 var keySz = keySizeInBits/4; //keySizeInBits defined in aes.js
 function makeKey() {
   var ret = "";
-  while (ret.length < keySz) 
+  while (ret.length < keySz)
     ret += hex[Math.floor(Math.random()*15)];
   return ret;
 }
@@ -1051,7 +1051,7 @@ function addEvent(obj, evType, fn){
 	} else {
 		return false;
 	}
-} 
+}
 
 // simple array search function.
 // If returnIndex==true, returns the index of the found item or false if the item is not found
@@ -1112,7 +1112,7 @@ if (typeof(PasswordMaker_MD4) != "object") {
       /* append padding */
       x[len >> 5] |= 0x80 << (len % 32);
       x[(((len + 64) >>> 9) << 4) + 14] = len;
-      
+
       var a =  1732584193;
       var b = -271733879;
       var c = -1732584194;
@@ -1634,7 +1634,7 @@ if (typeof(PasswordMaker_SHA256) != "object") {
       var hash = this.binb_sha256(ipad.concat(PasswordMaker_HashUtils.rstr2binb(data)), 512 + data.length * 8);
       return PasswordMaker_HashUtils.binb2rstr(this.binb_sha256(opad.concat(hash), 512 + ((bug) ? 160 : 256)));
     },
-	 
+
     /*
      * Main sha256 function, with its support functions
      */
@@ -2013,7 +2013,7 @@ if (typeof(PasswordMaker_RIPEMD160) != "object") {
 
   You should have received a copy of the GNU Lesser General Public License
   along with this library; if not, write to the Free Software Foundation,
-  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 **/
 
 /**************************************************
@@ -2168,7 +2168,7 @@ function fixDate(date) {
 
   You should have received a copy of the GNU Lesser General Public License
   along with this library; if not, write to the Free Software Foundation,
-  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 **/
 
 /*
@@ -2351,15 +2351,15 @@ if (typeof(PasswordMaker_HashUtils) != "object") {
 var EditableSelect = {
     /** The value used to indicate an option is the "edit" value. */
     "editValue": "!!!edit!!!",
-    
+
     /** The text used when creating an edit option for a select box. */
     "editText": "(Other...)",
     //"editText": "(Other\u2026)", // Doesn't work in IE's select box
     //"editText": "(Other" + unescape("%85") + ")", // Doesn't work in Safari
-    
+
     /** The text used when creating an edit option for a select box. */
     "editClass": "activateEdit",
-    
+
     /**
      * Finds all select elements and if they have the "editable" CSS class then
      * it makes that select be editable.
@@ -2373,7 +2373,7 @@ var EditableSelect = {
             }
         }
     },
-    
+
     /** Makes the select element editable. */
     "activate": function (select) {
         if (!EditableSelect.selectHasEditOption(select)) {
@@ -2384,7 +2384,7 @@ var EditableSelect = {
         EditableSelect.addEvent(select, "change", EditableSelect.selectOnChage);
         EditableSelect.addClass(select, "editable");
     },
-    
+
     /** Does the select box have an edit option. */
     "selectHasEditOption": function (select) {
         var options = select.options;
@@ -2395,7 +2395,7 @@ var EditableSelect = {
         }
         return false;
     },
-    
+
     /** Add an edit option to the select box. */
     "selectAddEditOption": function (select) {
         var option = document.createElement("option");
@@ -2404,7 +2404,7 @@ var EditableSelect = {
         option.className = EditableSelect.editClass;
         EditableSelect.selectAddOption(select, option, 0);
     },
-    
+
     /**
      * Add an option to the select box at specified postion.
      * "index" is optionial, if left undefined then the end is assumed.
@@ -2425,7 +2425,7 @@ var EditableSelect = {
             }
         }
     },
-    
+
     /**
      * Event handler for select box. If the edit option is selected it
      * switches to the edit input field.
@@ -2433,7 +2433,7 @@ var EditableSelect = {
     "selectOnChage": function (evt) {
         var select = this;
         if (evt.srcElement) select = evt.srcElement; // For IE
-        
+
         if (select.value == EditableSelect.editValue) {
             var input = document.createElement("input");
             input.type = "text";
@@ -2446,7 +2446,7 @@ var EditableSelect = {
             input.selectOnChange = select.onchange;
             EditableSelect.addEvent(input, "blur", EditableSelect.inputOnBlur);
             EditableSelect.addEvent(input, "keypress", EditableSelect.inputOnKeyPress);
-    
+
             var oldOptions = [];
             for (var i=0; i < select.options.length; i++) {
                 var o = select.options.item(i);
@@ -2454,17 +2454,17 @@ var EditableSelect = {
                 var oo = EditableSelect.serializeOption(o);
                 oldOptions[oldOptions.length] = oo;
             }
-            
+
             select.parentNode.replaceChild(input, select);
             input.focus();
             input.select();
             input.oldOptions = oldOptions;
-            
+
         } else {
             select.oldSelection = select.options.selectedIndex;
         }
     },
-    
+
     /**
      * Event handler for the input field when the field has lost focus.
      * This rebuilds the select box possibly adding a new option for what
@@ -2494,16 +2494,16 @@ var EditableSelect = {
                 newOption = null;
             } else if (keepSorted && newOption != null && EditableSelect.inputCompare(n, newOption) > 0) {
                 EditableSelect.selectAddOption(select, EditableSelect.deserializeOption(newOption));
-                
+
                 selectedIndex = optionIndex;
                 optionIndex++;
                 newOption = null;
             }
-            
+
             if (selectedIndex == -1 && n.value == value) {
                 selectedIndex = optionIndex;
             }
-            
+
             var opt = EditableSelect.deserializeOption(n);
             EditableSelect.selectAddOption(select, opt);
             optionIndex++;
@@ -2512,14 +2512,14 @@ var EditableSelect = {
         if (newOption != null) {
             var opt = EditableSelect.deserializeOption(newOption);
             EditableSelect.selectAddOption(select, opt);
-            
+
             select.options.selectedIndex = optionIndex;
             select.oldSelection = select.options.selectedIndex;
         } else {
             select.options.selectedIndex = selectedIndex;
             select.oldSelection = select.options.selectedIndex;
         }
-        
+
         EditableSelect.activate(select);
         input.parentNode.replaceChild(select, input);
         select.blur();
@@ -2551,7 +2551,7 @@ var EditableSelect = {
 	    select.selectedIndex = (select.options.length - 1);
 	}
     },
-    
+
     "inputCompare": function (x, y) {
         if (x.value ==  EditableSelect.editValue && y.value == EditableSelect.editValue) {
             return 0;
@@ -2572,7 +2572,7 @@ var EditableSelect = {
             return 1;
         }
     },
-    
+
     /** Intercept enter key presses to prevent form submit but still update the field. */
     "inputOnKeyPress": function (evt) {
         var e;
@@ -2596,7 +2596,7 @@ var EditableSelect = {
         }
         return true;
     },
-    
+
     /** Convert an option element to a form that can be attached to the input element. */
     "serializeOption": function (option) {
         var ser = {};
@@ -2611,7 +2611,7 @@ var EditableSelect = {
         if (option.id) ser.id = option.id;
         return ser;
     },
-    
+
     /** Reverse the serializeOption function into an option element. */
     "deserializeOption": function (ser) {
         var option = document.createElement("option");
@@ -2628,27 +2628,27 @@ var EditableSelect = {
         if (ser.id) option.id = ser.id;
         return option;
     },
-    
+
     /** Does this element have the CSS class? */
     "hasClass": function (element, clazz) {
         var regex = new RegExp('\\b'+clazz+'\\b');
         return regex.test(element.className);
     },
-    
+
     /** Append the CSS class to the element if it doesn't exist. */
     "addClass": function (element, clazz) {
         if (!EditableSelect.hasClass(element, clazz)) {
             element.className = element.className + " " + clazz;
         }
     },
-    
+
     /** Remove the CSS class from the element if it exist. */
     "removeClass": function (element, clazz) {
         if (EditableSelect.hasClass(element, clazz)) {
             element.className = element.className.replace(clazz, "");
         }
     },
-    
+
     // From: http://www.scottandrew.com/weblog/articles/cbs-events
     /** Add an event in a cross browser way. */
     "addEvent": function (obj, evType, fn, useCapture) {
@@ -2662,7 +2662,7 @@ var EditableSelect = {
             alert("Handler could not be attached");
         }
     },
-    
+
     /** Remove an event in a cross browser way. */
     "removeEvent": function (obj, evType, fn, useCapture){
         if (obj.removeEventListener){
@@ -2693,10 +2693,10 @@ var BodyShow = {
         }
     },
 
-    // From: http://www.scottandrew.com/weblog/articles/cbs-events    
+    // From: http://www.scottandrew.com/weblog/articles/cbs-events
     /** Add an event in a cross browser way. */
     "addEvent": function (obj, evType, fn, useCapture) {        if (obj.addEventListener){            obj.addEventListener(evType, fn, useCapture);            return true;        } else if (obj.attachEvent){            var r = obj.attachEvent("on"+evType, fn);            return r;        } else {            alert("Handler could not be attached");        }    },
-    
+
     /** Remove an event in a cross browser way. */
     "removeEvent": function (obj, evType, fn, useCapture){        if (obj.removeEventListener){            obj.removeEventListener(evType, fn, useCapture);            return true;        } else if (obj.detachEvent){            var r = obj.detachEvent("on"+evType, fn);            return r;        } else {            alert("Handler could not be removed");        }    }
 }
